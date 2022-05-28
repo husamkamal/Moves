@@ -32,7 +32,6 @@ export const Title = styled.h1`
   font-size: 34px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #fff;
 `;
 
 export const Description = styled.p`
@@ -47,7 +46,7 @@ export const Description = styled.p`
 `;
 
 export const MoviesTitle = styled(Title)`
-  color: ${(props) => props.theme.title};
+  color: ${({theme}) =>theme.text};
   margin: 45px 0;
   width: 100%;
   display: flex;

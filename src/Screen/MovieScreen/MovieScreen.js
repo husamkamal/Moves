@@ -18,7 +18,7 @@ import {
   ProgressBarPercentage,
 } from "./MovieScreen.Styles";
 import ActorCard from "../../Components/ActorCard/ActorCard";
-import { useLocation, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import useSearchQuery from "../../Utils/querySearch";
 import { useEffect, useState, useCallback } from "react";
 import CRUDRequest from "../../API";
@@ -30,6 +30,7 @@ function MovieScreen() {
   const query = useSearchQuery(location.search);
   const [moves, setMoves] = useState([]);
   const [isLodaing, setIsLodaing] = useState(true);
+  const navigate=useNavigate()
   const fetchData = useCallback(async () => {
     const response = await CRUDRequest.get(
       `movie/${params.id}?api_key=7b275ef8c426a1457421f07013981104`
@@ -50,7 +51,7 @@ function MovieScreen() {
     <FlexColumn>
       <NavigatorContainer>
         <NavigatorInnerContainer>
-          <NavigatorSpan >Back </NavigatorSpan>
+          <NavigatorSpan onClick={()=>navigate(-1)}>Back </NavigatorSpan>
           <NavigatorSpan>/{moves.title}</NavigatorSpan>
         </NavigatorInnerContainer>
       </NavigatorContainer>

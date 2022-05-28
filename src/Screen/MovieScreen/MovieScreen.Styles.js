@@ -31,7 +31,7 @@ export const NavigatorSpan = styled.div`
 export const MovieInfoBox = styled(InnerSection)`
   justify-content: start;
   align-items: start;
-  background: ${(props) => props.theme.background};
+  background: ${(theme) => theme.background};
   flex-direction: row;
   padding: 0;
   width: 100%;

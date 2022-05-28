@@ -31,7 +31,6 @@ function HomeScreen(props) {
   };
   useEffect(() => {
     fetchData();
-    console.log(movesList + 500000000);
   }, [fetchData, pageNumber]);
   return isLodaing ? (
     <SpinnerContainer />
@@ -41,7 +40,7 @@ function HomeScreen(props) {
         img={"https://image.tmdb.org/t/p/w500" + movesList[0].backdrop_path}
       >
         <InnerHeroSection>
-          <Title>{movesList[0].title}</Title>
+          <Title style={{  color: "#fff"}}>{movesList[0].title}</Title>
           <Description>{movesList[0].overview}</Description>
         </InnerHeroSection>
       </HeroSection>

@@ -85,6 +85,14 @@ export const ThemButton =styled.button`
   justify-content: center;
   align-items:center;
   align-self: flex-end;
+  cursor: pointer;
+  background:none;
+  border: none;
+  margin-bottom: 2rem;
+  & span {
+    width:2rem;
+    height:2rem;
+  }
   `
 // ***********************************************************
 // dark && light mode
@@ -97,7 +105,7 @@ export const GlobalStyles = createGlobalStyle`
 `;
 export const lightTheme = {
   body: '#f1f1f1',
-  text: '#f1f1f1',
+  text: '#121620',
   title:'#121620'
   ,
   background: '#000000b3'
